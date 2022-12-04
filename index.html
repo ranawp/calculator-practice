@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style src="./style.css"></style>
+</head>
+
+<body>
+    <select name="tot-pin-request" onclick="calculateAmount(this.value)" id="">
+        <option value="" disabled selected>Choose your number</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+    </select>
+    <label for="">Total amount</label>
+    <input type="text" readonly class="w3-input w3-border" id="tot_amount">
+
+    <p>simple sum</p>
+    <div>
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <input id="showResult" type="text" readonly>
+        <button onclick="total()">Click here</button>
+    </div>
+    <br>
+    <div>
+        <select name="" id="" onclick="selection(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="text" id="input4">
+        <input type="text" id="input5">
+    </div>
+    <br>
+    <h3>Third</h3>
+    <div>
+        <select name="" id="select" onclick="selecvalue(this.value)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <input type="text" id="input4">
+        <input type="text" id="input5">
+    </div>
+
+
+    <script>
+        function calculateAmount(val) {
+            console.log(val)
+            let tot_price = val / 100;
+            var divobj = document.getElementById('tot_amount');
+            divobj.value = tot_price
+        }
+
+        function total() {
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+            let cal = input1 * input2
+            document.getElementById('showResult').value = cal
+        }
+        // function selection(val) {
+        //     const input4 = document.getElementById('input4').value;
+        //     let input5 = document.getElementById('input5');
+        //     if (input4 == '') {
+        //         return
+        //     }
+        //     let total = input4 * val;
+        //     input5.value = total
+        // }
+
+
+        function search(ele) {
+
+            const input4 = document.getElementById('input4');
+            const select = document.getElementById('select');
+
+            // console.log(input4)
+            if (event.key == 'Enter') {
+                console.log(select.value)
+            }
+        }
+
+        function selecvalue(ele) {
+            const input4 = document.getElementById('input4');
+
+            if (event.key == 'Enter') {
+                console.log('input4')
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
